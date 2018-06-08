@@ -1,9 +1,9 @@
 {
   "engines": {
-    "composer": "^0.19.6"
+    "composer": "^0.19.8"
   },
   "name": "insurtech",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "insurtechMVP",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/insurtech.bna",
@@ -19,12 +19,12 @@
   "email": "dmbirochi@gmail.com",
   "license": "Apache-2.0",
   "devDependencies": {
-    "composer-admin": "^0.19.6",
-    "composer-cli": "^0.19.6",
-    "composer-client": "^0.19.6",
-    "composer-common": "^0.19.6",
-    "composer-connector-embedded": "^0.19.6",
-    "composer-cucumber-steps": "^0.19.6",
+    "composer-admin": "^0.19.8",
+    "composer-cli": "^0.19.8",
+    "composer-client": "^0.19.8",
+    "composer-common": "^0.19.8",
+    "composer-connector-embedded": "^0.19.8",
+    "composer-cucumber-steps": "^0.19.8",
     "chai": "latest",
     "chai-as-promised": "latest",
     "cucumber": "^2.2.0",

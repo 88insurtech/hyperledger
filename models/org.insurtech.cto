@@ -70,7 +70,7 @@ abstract participant Seguradora identified by nome {
 participant Insurtech extends Seguradora {
 }
 
-transaction CreateApoliceContratoSeguro {
+transaction CreateContratoApolice {
   o String contratoId
   o String beneficiarioApolice
   o DateTime validade

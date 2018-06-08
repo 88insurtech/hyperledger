@@ -39,8 +39,24 @@ rule InsurtechPermissionSystem {
 rule ParticipantRegistryControlPermission {
   description:  "give admin ALL access to Insurtech participant types"
   participant: "org.hyperledger.composer.system.NetworkAdmin"
-  operation: ALL
+  operation: CREATE, READ, UPDATE, DELETE
   resource: "org.insurtech.*"
+  action: ALLOW  
+}
+
+rule CRUD_INSURTECH_RESOURCES {
+  description:  "give admin ALL access to Insurtech participant types"
+  participant: "org.hyperledger.composer.system.NetworkAdmin#admin"
+  operation: CREATE, READ, UPDATE, DELETE
+  resource: "org.insurtech.**"
+  action: ALLOW  
+}
+
+rule CRUD_SYSTEM_RESOURCES {
+  description:  "give admin ALL access to Insurtech participant types"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: CREATE, READ, UPDATE, DELETE
+  resource: "org.hyperledger.composer.system.**"
   action: ALLOW  
 }
 

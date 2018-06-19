@@ -55,7 +55,7 @@ function upgradeApp(){
         // 4. Update the application
         // If you do not have the app installed, you will get an error
         console.log("Install successful")
-        return adminConnection.upgrade(appName, '0.0.2');
+        return adminConnection.upgrade(appName, '0.0.1');
 
     }).then(()=>{
 

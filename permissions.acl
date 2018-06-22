@@ -12,6 +12,7 @@
  * limitations under the License.
  */
 
+/*
 rule NetworkAdminUser {
     description: "Grant business network administrators full access to user resources"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
@@ -19,7 +20,7 @@ rule NetworkAdminUser {
     resource: "**"
     action: ALLOW
 }
-
+*/
 rule AdminControlNetworkPermission {
     description: "Grant business network administrators full access to system resources"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
@@ -36,18 +37,10 @@ rule InsurtechPermissionSystem {
   action: ALLOW  
 }
 
-rule ParticipantRegistryControlPermission {
-  description:  "give admin ALL access to Insurtech participant types"
-  participant: "org.hyperledger.composer.system.NetworkAdmin"
-  operation: CREATE, READ, UPDATE, DELETE
-  resource: "org.insurtech.*"
-  action: ALLOW  
-}
-
 rule CRUD_INSURTECH_RESOURCES {
   description:  "give admin ALL access to Insurtech participant types"
   participant: "org.hyperledger.composer.system.NetworkAdmin#admin"
-  operation: CREATE, READ, UPDATE, DELETE
+  operation: ALL
   resource: "org.insurtech.**"
   action: ALLOW  
 }
@@ -55,7 +48,7 @@ rule CRUD_INSURTECH_RESOURCES {
 rule CRUD_SYSTEM_RESOURCES {
   description:  "give admin ALL access to Insurtech participant types"
   participant: "org.hyperledger.composer.system.NetworkAdmin"
-  operation: CREATE, READ, UPDATE, DELETE
+  operation: ALL
   resource: "org.hyperledger.composer.system.**"
   action: ALLOW  
 }

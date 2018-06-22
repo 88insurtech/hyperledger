@@ -3,7 +3,7 @@
     "composer": "^0.19.8"
   },
   "name": "insurtech",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "insurtechMVP",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/insurtech.bna",

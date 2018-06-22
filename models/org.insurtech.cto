@@ -33,17 +33,17 @@ enum SinistroType {
 
 concept Sinistro {
   o SinistroType type 
-  o Double valorSinistro
+  o Double valorSinistro 
 }  
 
 asset Apolice identified by beneficiario {
   o String beneficiario
   o Integer apoliceNumber
-  o Double valorBemSegurado
-  o Double valorBem
-  o Double valorSaldo
-  o Double valorFranquia optional
-  o StatusApolice status default="VIGENTE"
+  o Double valorBemSegurado 
+  o Double valorBem 
+  o Double valorSaldo 
+  o Double valorFranquia optional 
+  o StatusApolice status default="VIGENTE" 
 }
 
 asset ContratoSeguro identified by contratoId {
@@ -82,12 +82,28 @@ transaction CreateContratoApolice {
   o StatusApolice status default="VIGENTE"  
 }
 
+transaction AddingSinistroApolice {
+  o String contratoId
+  o Sinistro sinistro
+}
+
+event SinistroAdded {
+  o String contratoId
+  o String beneficiario
+  o String message
+  o StatusApolice status
+}
+
 event ApoliceCreated {
   o String beneficiario
-  o Integer apoliceNumber
+  o String message
   o StatusApolice status
+  --> Apolice apolice
 }
 
 event ContratoSeguroCreated {
   o String contratoId
+  o String message
+  --> ContratoSeguro contrato
 }
+

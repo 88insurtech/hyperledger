@@ -41,7 +41,8 @@ This is the MVP develop by O-Blue for 88.
 ### Transaction sample requests below  
 
 POST CreateContratoApolice statement  
-```{
+```
+{
   "$class": "org.insurtech.CreateContratoApolice",
   "contratoId": "1234",
   "beneficiarioApolice": "Joao",
@@ -56,7 +57,8 @@ POST CreateContratoApolice statement
 ```  
 
 POST AddingSinistroApolice statement  
-```{
+```
+{
   "$class": "org.insurtech.AddingSinistroApolice",
   "contratoId": "1234",
   "sinistro": {

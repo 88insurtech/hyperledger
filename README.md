@@ -52,7 +52,8 @@ POST CreateContratoApolice statement
   "valorSaldo": 1000,
   "valorFranquia": 300,
   "status": "VIGENTE"
-}```  
+}
+```  
 
 POST AddingSinistroApolice statement  
 ```{
@@ -63,4 +64,5 @@ POST AddingSinistroApolice statement
     "type": "TELA",
     "valorSinistro": 100
   }
-}```
+}
+```

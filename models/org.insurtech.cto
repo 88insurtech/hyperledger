@@ -84,6 +84,7 @@ transaction CreateContratoApolice {
 
 transaction AddingSinistroApolice {
   o String contratoId
+  o String apoliceId
   o Sinistro sinistro
 }
 

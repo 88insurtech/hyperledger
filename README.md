@@ -47,7 +47,7 @@ POST CreateContratoApolice statement
   "contratoId": "1234",
   "beneficiarioApolice": "Joao",
   "validade": "2019-06-24T22:17:09.028Z",
-  "apoliceNumber": 1234,
+  "apoliceId": "1234",
   "valorBemSegurado": 1000,
   "valorBem": 1000,
   "valorSaldo": 1000,
@@ -61,6 +61,7 @@ POST AddingSinistroApolice statement
 {
   "$class": "org.insurtech.AddingSinistroApolice",
   "contratoId": "1234",
+  "apoliceId": "1234",
   "sinistro": {
     "$class": "org.insurtech.Sinistro",
     "type": "TELA",

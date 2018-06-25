@@ -36,9 +36,9 @@ concept Sinistro {
   o Double valorSinistro 
 }  
 
-asset Apolice identified by beneficiario {
+asset Apolice identified by apoliceId {
+  o String apoliceId
   o String beneficiario
-  o Integer apoliceNumber
   o Double valorBemSegurado 
   o Double valorBem 
   o Double valorSaldo 
@@ -74,7 +74,7 @@ transaction CreateContratoApolice {
   o String contratoId
   o String beneficiarioApolice
   o DateTime validade
-  o Integer apoliceNumber
+  o String apoliceId
   o Double valorBemSegurado
   o Double valorBem
   o Double valorSaldo
@@ -88,10 +88,10 @@ transaction AddingSinistroApolice {
 }
 
 event SinistroAdded {
-  o String contratoId
-  o String beneficiario
-  o String message
-  o StatusApolice status
+  o String contratoId optional
+  o String beneficiario optional
+  o String message optional
+  o StatusApolice status optional
 }
 
 event ApoliceCreated {

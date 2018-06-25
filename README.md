@@ -4,44 +4,44 @@ This is the MVP develop by O-Blue for 88.
 
 ### Starting Application  
 
-#1 Create the BNA archive (from insurtech/dist directory)  
+**1. Create the BNA archive (from insurtech/dist directory)**   
 `composer archive create  --sourceType dir --sourceName ../`  
 
-#2.1 Install the Business Network Application archive  
+**2. Install the Business Network Application archive**  
 `composer network install -a ./insurtech@0.0.1.bna -c PeerAdmin@hlfv1`  
 
-#2.2 Start the network  
+**3. Start the network**  
 `composer network start -n insurtech -c PeerAdmin@hlfv1 -V 0.0.1 -A admin -S adminpw`  
 
-#3 Import the card  
+**4. Import the card**  
 `composer card delete -c admin@insurtech`  
 `composer card import -f admin@insurtech.card`  
 
-#4 Run REST Server on http://localhost:3000/  
+**5. Run REST Server on http://localhost:3000/**  
 `composer-rest-server -c admin@insurtech -n always -w true`  
 
 ### Upgrading Application Version
 
-#1 Edit package.json providing new BNA version  
+**1. Edit package.json providing new BNA version**  
 `nano ../package.json`  
 `
 "name": "insurtech",  
 "version": "0.0.1", --> "version": "0.0.2",
 `
 
-#2 Create the BNA archive (from insurtech/dist directory)  
+**2. Create the BNA archive (from insurtech/dist directory)**  
 `composer archive create -t dir -n ../`
 
-#3.1 Install the Business Network Application archive  
+**3. Install the Business Network Application archive**  
 `composer network install -a insurtech@0.0.2.bna -c PeerAdmin@hlfv1`
 
-#3.2 Start the new network  
+**4. Start the new network**  
 `composer network upgrade -c PeerAdmin@hlfv1 -n insurtech -V 0.0.2`
 
 ### Transaction sample requests below  
 
 POST CreateContratoApolice statement  
-```
+```js
 {
   "$class": "org.insurtech.CreateContratoApolice",
   "contratoId": "1234",
@@ -57,7 +57,7 @@ POST CreateContratoApolice statement
 ```  
 
 POST AddingSinistroApolice statement  
-```
+```js
 {
   "$class": "org.insurtech.AddingSinistroApolice",
   "contratoId": "1234",
